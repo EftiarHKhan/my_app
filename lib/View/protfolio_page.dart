@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/Widgets/Bar/home_app_bar.dart';
+import 'package:my_app/Widgets/Bar/side_menu_bar.dart';
+import 'package:my_app/Widgets/colors.dart';
+import 'package:my_app/Widgets/sizes.dart';
+import 'package:my_app/Widgets/text_strings.dart';
 
-
+import '../Widgets/image_strings.dart';
 
 class ProtfolioPage extends StatefulWidget {
   const ProtfolioPage({Key? key}) : super(key: key);
@@ -10,91 +15,45 @@ class ProtfolioPage extends StatefulWidget {
 }
 
 class _ProtfolioPageState extends State<ProtfolioPage> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text(
-          "My Protfolio",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 30.0,
-          ),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+      appBar: HomeAppBar(),
+      drawer: const SideMenuBar(),
+      body: SingleChildScrollView(
+        child: Column(
           children: [
-            const DrawerHeader(
-              child: Text(
-                "My Protfolio",
-              ),
+            const Image(
+              image: AssetImage(tBannerImage),
+              fit: BoxFit.cover,
             ),
-            ListTile(
-              title: const Text(
-                "Home",
-              ),
-              onTap: (){
-
-              },
+            const SizedBox(
+              height: 20,
             ),
-            ListTile(
-              title: const Text(
-                "About"
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Column(
+                children: const [
+                  Text(
+                    tProtfolioTitle,
+                    style: TextStyle(
+                      fontSize: tTitleSize,
+                      color: tTitleColor,
+                    ),
+                  ),
+                  SizedBox(height: 20.0,),
+                  Text(
+                    tProtfolioParagraph,
+                    style: TextStyle(
+                      fontSize: tParagraphSize,
+                      color: tParagraphColor,
+                    ),
+                  ),
+                ],
               ),
-              onTap: (){},
             )
           ],
-        ),
-      ),
-
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Hey There,",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 30.0,
-                      ),
-                    ),
-                    SizedBox(height: 10.0,),
-                    Text(
-                      "I'm Eftiar,",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 30.0,
-                      ),
-                    ),
-                    SizedBox(height: 10.0,),
-                    Text(
-                      "I have a passion for creating user friendly mobile application",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 15.0,
-                      ),
-                    ),
-                    SizedBox(height: 20.0,),
-                  ],
-                ),
-
-
-                Image.asset('images/Logo.png'),
-              ],
-            ),
-          ),
         ),
       ),
     );

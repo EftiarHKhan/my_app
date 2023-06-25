@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(15.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -36,13 +36,25 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Center(
-                  child: Text(
-                    tWelcomeMessage2 + tUserName,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 35.0,
-                    ),
+                Center(
+                  child: Column(
+                    children: const [
+                      Text(
+                        tWelcomeMessage2 + tUserName,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 35.0,
+                        ),
+                      ),
+                      SizedBox(height: 10,),
+                      Text(
+                        tShortTitle,
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18.0,
+                        ),
+                      )
+                    ],
                   ),
                 ),
                 Container(

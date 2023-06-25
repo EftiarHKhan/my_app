@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_app/View/home_page.dart';
+import 'package:my_app/View/protfolio_page.dart';
 
 import '../image_strings.dart';
 import '../text_strings.dart';
@@ -13,7 +16,7 @@ class SideMenuBar extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           children: [
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             SizedBox(
               width: 70,
               height: 70,
@@ -37,21 +40,21 @@ class SideMenuBar extends StatelessWidget {
                 tHomebar,
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: () => Get.to(()=> const HomePage()),
             ),
             ListTile(
               title: const Text(
                 tProtfoliobar,
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: ()  => Get.to(()=> const ProtfolioPage()),
             ),
             ListTile(
               title: const Text(
                 tProjectbar,
                 style: TextStyle(fontSize: 20),
               ),
-              onTap: () {},
+              onTap: ()  => Get.to(()=> const HomePage()),
             ),
             ListTile(
               title: const Text(
