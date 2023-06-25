@@ -41,6 +41,7 @@ dependencies:
   http:
   firebase_core:
   firebase_auth: ^4.6.3
+  line_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
