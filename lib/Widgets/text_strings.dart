@@ -13,3 +13,8 @@ const String tProjectbar = "Project";
 const String tExpericenbar = "Experience";
 const String tContactbar = "Contact";
 const String tAboutbar = "About";
+
+// -- Homepage body
+const String tWelcomeMessage = "Hey There,";
+const String tWelcomeMessage2 = "I'm ";
+const String tDownloadCV = "Download CV";

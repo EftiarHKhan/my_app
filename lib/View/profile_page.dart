@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:my_app/Widgets/image_strings.dart';
 import 'package:my_app/Widgets/sizes.dart';
@@ -16,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
 
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Get.back(),
           icon: Icon(LineAwesomeIcons.angle_left),
         ),
         title: Text(tProfile, style: Theme.of(context).textTheme.headline4,),
