@@ -4,6 +4,7 @@
 const String tProfile = "Profile";
 const String tEditProfile ="Edit Profile";
 const String tLogoutDialogHeading = "Logout";
+const String tEmail = "mdeftiar111@gmail.com";
 
 //  -- Home page side menu bar
 const String tUserName = "Md Eftiar Haider Khan";
