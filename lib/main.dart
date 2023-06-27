@@ -28,14 +28,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      // initialRoute: "/",
-      // getPages: [
-      //   GetPage(name: "/", page: () => const LoginPage()),
-      // ],
+      initialRoute: "/",
+      getPages: [
+        GetPage(name: "/", page: () => const LoginPage()),
+      ],
 
       defaultTransition: Transition.leftToRightWithFade,
 
-      home: const LoginPage(),
+      //home: const LoginPage(),
     );
   }
 }

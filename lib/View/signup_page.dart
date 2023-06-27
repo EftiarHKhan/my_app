@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_app/Controller/signup_controller.dart';
 
+import '../Model/user_model.dart';
 import 'login_page.dart';
-
 
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
@@ -13,7 +13,6 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
-
   final controller = Get.put(SignUpController());
   final _formKey = GlobalKey<FormState>();
 
@@ -57,8 +56,8 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              borderSide:
-                              const BorderSide(width: 3, color: Colors.black),
+                              borderSide: const BorderSide(
+                                  width: 3, color: Colors.black),
                             ),
                           ),
                         ),
@@ -75,8 +74,8 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              borderSide:
-                              const BorderSide(width: 3, color: Colors.black),
+                              borderSide: const BorderSide(
+                                  width: 3, color: Colors.black),
                             ),
                           ),
                         ),
@@ -93,8 +92,8 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              borderSide:
-                              const BorderSide(width: 3, color: Colors.black),
+                              borderSide: const BorderSide(
+                                  width: 3, color: Colors.black),
                             ),
                           ),
                         ),
@@ -111,8 +110,8 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              borderSide:
-                              const BorderSide(width: 3, color: Colors.black),
+                              borderSide: const BorderSide(
+                                  width: 3, color: Colors.black),
                             ),
                           ),
                         ),
@@ -141,35 +140,46 @@ class _SignupPageState extends State<SignupPage> {
                           height: 30.0,
                         ),
                         SizedBox(
-                          height: 60,
+                          height: 50,
                           width: 200,
                           child: ElevatedButton(
                               onPressed: () {
-                                if(_formKey.currentState!.validate()){
-                                  SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+                                if (_formKey.currentState!.validate()) {
+                                  // Email & password Authentication
+                                  //SignUpController.instance.registerUser(controller.email.text.trim(), controller.password.text.trim());
+
+                                  final user = UserModel(
+                                    email: controller.email.text.trim(),
+                                    password: controller.password.text.trim(),
+                                    name: controller.name.text.trim(),
+                                    phoneNo: controller.phoneNo.text.trim(),
+                                  );
+                                  SignUpController.instance.createUser(user);
+
+                                  // OTP authentication
+                                  // SignUpController.instance.phoneAuthenticaton(user.phoneNo);
+
                                 }
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.blueAccent,
-                                  side: const BorderSide(
-                                    //width: 3,
-                                      color: Colors.brown), //border width and color
-                                  //elevation: 3, //elevation of button
-                                  shape: RoundedRectangleBorder( //to set border radius to button
-                                      borderRadius: BorderRadius.circular(15.0)
-                                  ),
+                                  shape: RoundedRectangleBorder(
+                                      //to set border radius to button
+                                      borderRadius: BorderRadius.circular(8.0)),
                                   padding: const EdgeInsets.all(
                                       20) //content padding inside button
-                              ),
+                                  ),
                               child: const Text(
-                                "Log in",
+                                "Sign up",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20.0,
+                                  fontSize: 18.0,
                                 ),
                               )),
                         ),
-                        const SizedBox(height: 30.0,),
+                        const SizedBox(
+                          height: 30.0,
+                        ),
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -178,16 +188,17 @@ class _SignupPageState extends State<SignupPage> {
                               "Already have an account?",
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20.0,
+                                fontSize: 15.0,
                               ),
                             ),
                             TextButton(
-                                onPressed: () => Get.to(()=> const LoginPage()),
+                                onPressed: () =>
+                                    Get.to(() => const LoginPage()),
                                 child: const Text(
                                   "Login",
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 20.0,
+                                    fontSize: 17.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ))

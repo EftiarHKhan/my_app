@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_app/View/signup_page.dart';
 
+import '../Model/user_model.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -11,7 +12,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   //LoginController controller = Get.put(LoginController());
 
   bool passwordVisible = false;
@@ -137,20 +137,36 @@ class _LoginPageState extends State<LoginPage> {
 
                       // another way to create login button
                       InkWell(
-                        onTap: (){},
+                        onTap: () {
+                          // if (_formKey.currentState!.validate()) {
+                          //   // Email & password Authentication
+                          //   LoginController.instance.registerUser(
+                          //       controller.email.text.trim(),
+                          //       controller.password.text.trim());
+
+                          //   // OTP authentication
+                          //   // SignUpController.instance.phoneAuthenticaton(user.phoneNo);
+
+                          // }
+                        },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             height: 50,
                             width: 200,
-                            color: Colors.blueAccent,
-                            child: Text('Login'),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: Colors.blueAccent
+                            ),
+
+                            child: const Center(child: Text('Login', style: TextStyle(color: Colors.white, fontSize: 18.0),)),
                           ),
                         ),
                       ),
 
-
-                      const SizedBox(height: 30.0,),
+                      const SizedBox(
+                        height: 30.0,
+                      ),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -159,19 +175,19 @@ class _LoginPageState extends State<LoginPage> {
                             "Don't have an account?",
                             style: TextStyle(
                               color: Colors.grey,
-                              fontSize: 20.0,
+                              fontSize: 15.0,
                             ),
                           ),
                           TextButton(
-                              onPressed: () => Get.to(()=>const SignupPage()),
+                              onPressed: () => Get.to(() => const SignupPage()),
                               child: const Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ))
+                                "Sign Up",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ))
                         ],
                       )
                     ],

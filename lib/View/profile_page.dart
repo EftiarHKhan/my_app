@@ -5,6 +5,7 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:my_app/Widgets/image_strings.dart';
 import 'package:my_app/Widgets/sizes.dart';
 import 'package:my_app/Widgets/text_strings.dart';
+import 'package:my_app/repository/authentication_repository.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

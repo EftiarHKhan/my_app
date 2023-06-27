@@ -38,10 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   font_awesome_flutter:
-  http:
-  firebase_core:
+  http: ^1.1.0
+  firebase_core: ^2.14.0
   firebase_auth: ^4.6.3
   line_awesome_flutter:
+  cloud_firestore: ^4.8.2
+  #google_fonts: ^5.1.0
 
 dev_dependencies:
   flutter_test:
